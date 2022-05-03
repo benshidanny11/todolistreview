@@ -43,6 +43,16 @@ export const updateDescription = (index, description) => {
   window.location.reload();
 };
 
+export const getMoreButton = (moreOption, deleteImage, index) => {
+  moreOption.classList.add('icon-cust');
+  moreOption.setAttribute('src', `${deleteImage}`);
+  moreOption.setAttribute('width', '20');
+  moreOption.setAttribute('heigt', '20');
+  moreOption.addEventListener('click', () => {
+    deleteTodo(index);
+  });
+};
+
 export const refreshPage = () => window.location.reload();
 
 export const checkTodo = (completed) => !completed;
